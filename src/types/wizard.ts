@@ -1,3 +1,39 @@
+export interface VendorOption {
+  id: string;
+  name: string;
+  description: string;
+  location: string;
+  price: number;
+  rating: number;
+  tags: string[];
+}
+
+export interface ModuleRecommendation {
+  id: string;
+  category: string;
+  icon: string;
+  description: string;
+  options: VendorOption[];
+  selectedOptionId: string | null;
+  status: "pending" | "accepted" | "rejected";
+}
+
+export interface ParsedRequirements {
+  eventType: string | null;
+  date: string | null;
+  guestCount: number | null;
+  ageGroup: string | null;
+  location: string | null;
+  budget: { min: number; max: number } | null;
+  foodDrink: string[];
+  entertainment: string[];
+  theme: string | null;
+  rawInput: string;
+}
+
+export type FlowStep = "input" | "requirements" | "loading" | "modules" | "shortlist" | "contact" | "confirmation";
+
+// Legacy types kept for existing components
 export interface WizardData {
   date: string | null;
   budgetMin: number;
@@ -9,8 +45,6 @@ export interface WizardData {
   dietary: string[];
   entertainment: string[];
 }
-
-export type WizardStep = 'welcome' | 'date' | 'budget' | 'guests' | 'age' | 'preferences' | 'review' | 'results' | 'contact' | 'confirmation';
 
 export interface Package {
   id: number;
