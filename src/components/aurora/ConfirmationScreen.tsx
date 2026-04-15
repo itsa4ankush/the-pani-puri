@@ -7,8 +7,8 @@ interface ConfirmationScreenProps {
 const ConfirmationScreen = ({ onPlanAnother }: ConfirmationScreenProps) => {
   return (
     <div className="max-w-lg mx-auto text-center animate-fade-in py-20">
-      <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-        <CheckCircle className="w-10 h-10 text-green-600" />
+      <div className="w-20 h-20 rounded-full bg-aurora-light-blue flex items-center justify-center mx-auto mb-6">
+        <CheckCircle className="w-10 h-10 text-primary" />
       </div>
 
       <h2 className="font-display text-3xl font-bold text-primary mb-3">Your request has been sent!</h2>
