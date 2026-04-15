@@ -40,6 +40,13 @@
     --aurora-warm: 30 88% 67%;
     --aurora-light-blue: 204 60% 93%;
 
+    --module-venue: 201 47% 33%;
+    --module-food: 30 88% 50%;
+    --module-drinks: 340 65% 50%;
+    --module-entertainment: 270 60% 50%;
+    --module-decor: 150 50% 40%;
+    --module-photography: 45 85% 50%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
