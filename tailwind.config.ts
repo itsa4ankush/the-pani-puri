@@ -56,6 +56,14 @@ export default {
           warm: "hsl(var(--aurora-warm))",
           "light-blue": "hsl(var(--aurora-light-blue))",
         },
+        module: {
+          venue: "hsl(var(--module-venue))",
+          food: "hsl(var(--module-food))",
+          drinks: "hsl(var(--module-drinks))",
+          entertainment: "hsl(var(--module-entertainment))",
+          decor: "hsl(var(--module-decor))",
+          photography: "hsl(var(--module-photography))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
