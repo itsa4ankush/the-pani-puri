@@ -129,56 +129,9 @@ User opens Aurora
 - Redis 7+
 - An [Anthropic API key](https://console.anthropic.com)
 
-### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/your-org/aurora.git
-cd aurora
 
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-```
-
-### Environment variables
-
-```env
-# Anthropic
-ANTHROPIC_API_KEY=your_key_here
-
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/aurora
-
-# Redis
-REDIS_URL=redis://localhost:6379
-
-# Auth (Clerk)
-CLERK_PUBLISHABLE_KEY=your_key_here
-CLERK_SECRET_KEY=your_key_here
-
-# Storage
-AWS_ACCESS_KEY_ID=your_key_here
-AWS_SECRET_ACCESS_KEY=your_key_here
-AWS_S3_BUCKET=aurora-assets
-
-# Email
-RESEND_API_KEY=your_key_here
-```
-
-### Run locally
-
-```bash
-# Run database migrations
-npx prisma migrate dev
-
-# Start development servers (frontend + backend)
-npm run dev
-```
-
-The app will be available at `http://localhost:3000`.
+The app will be available at `http://localhost:3000](https://aurora-even-planner.lovable.app/`.
 
 ---
 
@@ -252,19 +205,7 @@ Orchestrator agent
 
 Contributions are welcome. Please open an issue to discuss what you'd like to change before submitting a pull request.
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'add: your feature description'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a pull request
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
