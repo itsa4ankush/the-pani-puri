@@ -5,10 +5,6 @@
 
 **URL**: [Project Link](https://aurora-even-planner.lovable.app/)
 
-[![Status](https://img.shields.io/badge/status-in_development-amber)](.)
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
-[![Built with Claude](https://img.shields.io/badge/powered_by-Claude_AI-blueviolet)](https://anthropic.com)
 
 **Aurora turns a 5-minute conversation into a fully planned, vendor-confirmed event.**  
 From birthday parties to corporate offsites — no spreadsheets, no browser tabs, no chaos.
