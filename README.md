@@ -3,6 +3,8 @@
 # ✨ Aurora
 ### AI-Powered Event Planner & Party Planning Agent
 
+**URL**: [Project Link](https://aurora-even-planner.lovable.app/)
+
 [![Status](https://img.shields.io/badge/status-in_development-amber)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
