@@ -9,12 +9,12 @@ interface AuroraHeaderProps {
 
 const AuroraHeader = ({ onSaveExit, onBackToPackages, showSaveExit, showBackToPackages }: AuroraHeaderProps) => {
   return (
-    <header className="flex items-center justify-between px-6 py-3 border-b border-border">
+    <header className="flex items-center justify-between px-6 py-3 border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-30 shadow-soft">
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
+        <div className="w-9 h-9 rounded-lg bg-gradient-primary flex items-center justify-center shadow-soft">
           <Sun className="w-[18px] h-[18px] text-primary-foreground" />
         </div>
-        <span className="font-display text-xl font-bold text-primary">Aurora</span>
+        <span className="font-display text-xl font-bold text-gradient-primary">Aurora</span>
       </div>
       <div className="flex items-center gap-3">
         {showBackToPackages && (

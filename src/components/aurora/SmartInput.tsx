@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Sun, ArrowRight, Sparkles } from "lucide-react";
+import { Sun, ArrowRight, Sparkles, Shield, Euro, Star } from "lucide-react";
 
 interface SmartInputProps {
   onSubmit: (input: string) => void;
@@ -34,22 +34,32 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-gradient-hero flex flex-col relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-10 -left-20 w-80 h-80 rounded-full bg-aurora-coral/10 blur-3xl animate-float" />
+      <div className="absolute bottom-20 -right-20 w-96 h-96 rounded-full bg-aurora-lavender/10 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+
       {/* Header */}
-      <header className="px-6 py-5">
+      <header className="px-6 py-5 relative z-10">
         <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-lg bg-primary flex items-center justify-center">
+          <div className="w-11 h-11 rounded-xl bg-gradient-primary flex items-center justify-center shadow-elegant">
             <Sun className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="font-display text-2xl font-bold text-primary">Aurora</span>
+          <span className="font-display text-2xl font-bold text-gradient-primary">Aurora</span>
         </div>
       </header>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 max-w-3xl mx-auto w-full -mt-16">
+      <div className="flex-1 flex flex-col items-center justify-center px-6 max-w-3xl mx-auto w-full -mt-16 relative z-10">
+        <div className="inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-full px-4 py-1.5 mb-6 shadow-soft">
+          <Sparkles className="w-3.5 h-3.5 text-accent" />
+          <span className="text-xs font-semibold text-primary">AI-Powered Planning</span>
+        </div>
+
         <div className="text-center mb-10">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary leading-tight mb-4">
-            Tell us about your event
+          <h1 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-4">
+            <span className="text-foreground">Tell us about</span>{" "}
+            <span className="text-gradient-aurora">your event</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Describe your perfect party in one sentence. Include date, guests, location, and what you'd like — we'll handle the rest.
@@ -58,10 +68,12 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
 
         {/* Input area */}
         <div className="w-full relative mb-6">
-          <div className="relative bg-card border-2 border-border rounded-xl overflow-hidden focus-within:border-primary/40 transition-colors shadow-sm">
+          <div className="relative bg-gradient-card border-2 border-border rounded-2xl overflow-hidden focus-within:border-primary/40 focus-within:shadow-elegant transition-smooth shadow-card">
             <div className="flex items-center gap-2 px-4 pt-3 pb-1">
-              <Sparkles className="w-4 h-4 text-accent flex-shrink-0" />
-              <span className="text-xs font-medium text-accent">AI-Powered Planning</span>
+              <div className="w-5 h-5 rounded-md bg-gradient-accent flex items-center justify-center">
+                <Sparkles className="w-3 h-3 text-accent-foreground" />
+              </div>
+              <span className="text-xs font-semibold text-accent">AI-Powered</span>
             </div>
             <textarea
               ref={inputRef}
@@ -77,7 +89,7 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
               <button
                 onClick={handleSubmit}
                 disabled={!input.trim()}
-                className="bg-accent text-accent-foreground font-semibold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 text-sm"
+                className="bg-gradient-accent text-accent-foreground font-semibold px-5 py-2 rounded-lg hover:scale-[1.03] active:scale-[0.97] transition-smooth disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center gap-2 text-sm shadow-soft hover:shadow-glow"
               >
                 Plan My Event
                 <ArrowRight className="w-4 h-4" />
@@ -95,7 +107,7 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
                 <button
                   key={i}
                   onClick={() => { setInput(example); setShowExamples(false); inputRef.current?.focus(); }}
-                  className="w-full text-left px-4 py-3 rounded-lg border border-border bg-card hover:bg-muted/50 hover:border-primary/20 transition-all text-sm text-muted-foreground"
+                  className="w-full text-left px-4 py-3 rounded-xl border border-border bg-card/60 backdrop-blur-sm hover:bg-card hover:border-primary/30 hover:shadow-soft transition-smooth text-sm text-muted-foreground"
                 >
                   "{example}"
                 </button>
@@ -106,11 +118,11 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
       </div>
 
       {/* Footer trust bar */}
-      <div className="px-6 py-4 border-t border-border">
+      <div className="px-6 py-4 border-t border-border/60 backdrop-blur-sm bg-background/40 relative z-10">
         <div className="flex justify-center gap-8 text-xs text-muted-foreground">
-          <span>🛡️ 127 verified vendors</span>
-          <span>💰 No hidden fees</span>
-          <span>⭐ 4.8 average rating</span>
+          <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-aurora-mint" /> 127 verified vendors</span>
+          <span className="flex items-center gap-1.5"><Euro className="w-3.5 h-3.5 text-aurora-coral" /> No hidden fees</span>
+          <span className="flex items-center gap-1.5"><Star className="w-3.5 h-3.5 text-accent" /> 4.8 average rating</span>
         </div>
       </div>
     </div>
