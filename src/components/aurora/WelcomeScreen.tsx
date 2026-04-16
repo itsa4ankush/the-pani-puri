@@ -1,4 +1,5 @@
 import { Sun, CheckCircle, Shield, Euro, Star, Sparkles } from "lucide-react";
+import heroBg from "@/assets/hero-background.jpg";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -6,11 +7,22 @@ interface WelcomeScreenProps {
 
 const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   return (
-    <div className="min-h-screen bg-gradient-hero flex flex-col relative overflow-hidden">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      {/* Hero background image */}
+      <img
+        src={heroBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+      />
+      {/* Soft overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70 backdrop-blur-[2px]" />
       {/* Decorative blobs */}
-      <div className="absolute top-20 -left-20 w-96 h-96 rounded-full bg-aurora-coral/10 blur-3xl animate-float" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-aurora-lavender/10 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-aurora-mint/10 blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+      <div className="absolute top-20 -left-20 w-96 h-96 rounded-full bg-aurora-coral/15 blur-3xl animate-float" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-aurora-lavender/15 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-aurora-mint/15 blur-3xl animate-float" style={{ animationDelay: "4s" }} />
 
       {/* Header */}
       <header className="px-6 py-5 relative z-10">

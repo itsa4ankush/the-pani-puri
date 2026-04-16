@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Sun, ArrowRight, Sparkles, Shield, Euro, Star } from "lucide-react";
+import inputBg from "@/assets/input-background.jpg";
 
 interface SmartInputProps {
   onSubmit: (input: string) => void;
@@ -34,7 +35,18 @@ const SmartInput = ({ onSubmit }: SmartInputProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero flex flex-col relative overflow-hidden">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      {/* Background image */}
+      <img
+        src={inputBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+      />
+      {/* Soft overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/75 to-background/85 backdrop-blur-[2px]" />
       {/* Decorative blobs */}
       <div className="absolute top-10 -left-20 w-80 h-80 rounded-full bg-aurora-coral/10 blur-3xl animate-float" />
       <div className="absolute bottom-20 -right-20 w-96 h-96 rounded-full bg-aurora-lavender/10 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
