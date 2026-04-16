@@ -45,7 +45,8 @@ const AuroraWizard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-gradient-hero flex flex-col relative">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-60 pointer-events-none" />
       <AuroraHeader
         showSaveExit={step === "requirements" || step === "modules"}
         showBackToPackages={step === "contact"}
@@ -53,15 +54,15 @@ const AuroraWizard = () => {
         onBackToPackages={() => setStep("shortlist")}
       />
 
-      <div className="flex-1 px-6 py-8 overflow-y-auto">
+      <div className="flex-1 px-6 py-8 overflow-y-auto relative z-10">
         {step === "requirements" && parsed && (
           <RequirementsSummary parsed={parsed} onConfirm={handleConfirm} onStartOver={reset} />
         )}
 
         {step === "loading" && (
           <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-            <div className="w-16 h-16 border-4 border-muted border-t-accent rounded-full animate-spin mb-6" />
-            <h3 className="font-display text-xl font-semibold text-primary mb-2">Finding vendors for your event...</h3>
+            <div className="w-16 h-16 border-4 border-muted border-t-accent rounded-full animate-spin mb-6 shadow-glow" />
+            <h3 className="font-display text-xl font-semibold text-gradient-primary mb-2">Finding vendors for your event...</h3>
             <p className="text-sm text-muted-foreground">
               Searching across 6 categories in {parsed?.location || "your area"}
             </p>
